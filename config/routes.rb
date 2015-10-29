@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   end
 
+  resources :ingredients, only: [:index, :show, :new, :create]
   # resources :ingredients, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
