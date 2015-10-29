@@ -1,8 +1,10 @@
-<h1>Please fill the form to create a new cocktail</h1>
+<div class="layer">
 
-<%= form_for @cocktail do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <h1>Please fill the form to create a new cocktail</h1>
 
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>

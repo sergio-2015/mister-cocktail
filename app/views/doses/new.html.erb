@@ -1,12 +1,16 @@
-<h1>please add an ingredient</h1>
+<div class="layer">
+
+  <h1>please add an ingredient</h1>
 
 
-<p>Please check if your ingredient is already in the list</p>
+  <p>Please check if your ingredient is already in the list</p>
 
 
-<%= form_for @cocktail, url: cocktail_doses_path(@restaurant) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= simple_form_for @dose, url: cocktail_doses_path(@cocktail) do |f| %>
+    <%= f.input :ingredient_id, collection: @ingredients %>
+    <%= f.input :description %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit 'create' %>
+  <% end %>
+
+</div>

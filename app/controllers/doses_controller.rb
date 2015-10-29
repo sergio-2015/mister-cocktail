@@ -4,17 +4,17 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
+    @ingredients = Ingredient.all
   end
 
   def create
-    @dose = @cocktail.dose.build(dose_params)
+    @dose = @cocktail.doses.build(dose_params)
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      reder new
+      reder 'new'
     end
   end
-
 
 
   private
@@ -24,7 +24,7 @@ class DosesController < ApplicationController
     end
 
     def dose_params
-      params.require(:dose).permit(:description)
+      params.require(:dose).permit(:description, :ingredient_id)
     end
 
 end
