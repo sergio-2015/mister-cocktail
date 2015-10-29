@@ -10,11 +10,12 @@
         <li><%= dose.ingredient.name %> : <%= dose.description %> cl. </li>
       <% end %>
     </ul>
+    <p><%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %></p>
   <% else %>
     <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail) %>
   <% end %>
 
-  <%= link_to 'Delete this cocktail', cocktail_path(@cocktail), method: :delete %>
+  <p><%= link_to 'Delete this cocktail', cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %></p>
 
 </div>
 
