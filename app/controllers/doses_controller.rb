@@ -12,10 +12,15 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      reder 'new'
+      render :new
     end
   end
 
+  def destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+    redirect_to :back
+  end
 
   private
 
